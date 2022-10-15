@@ -18,10 +18,11 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build(DOCKER_IMAGE_NAME)
-                    app.inside {
-                        sh 'echo Hello, World!'
-                    }
+                    //app = docker.build(DOCKER_IMAGE_NAME)
+                    //app.inside {
+                     //sh 'echo Hello, World!'
+                    //}
+                    sh 'docker build -t 20636/train-schedule:${env.BUILD_NUMBER} .'
                 }
             }
         }
